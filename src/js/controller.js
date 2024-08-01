@@ -69,7 +69,6 @@ const controlServings = function (newServings) {
   // Update the recipe servings (in state)
   model.updateServings(newServings);
   // Update the recipe view
-  // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 };
 const controlAddBookmark = function () {
@@ -115,9 +114,6 @@ const controlAddRecipe = async function (newRecipe) {
     addRecipeView.renderError(err.message);
   }
 };
-const newFeature = function () {
-  console.log('TEST: Welcome to the application!');
-};
 
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -127,6 +123,5 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  newFeature();
 };
 init();
