@@ -2,7 +2,7 @@
 
 import View from './view';
 import icons from 'url:../../img/icons.svg'; // Parcel 2
-import { Fraction } from 'Fracty';
+import { Fraction } from 'fractional';
 
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
