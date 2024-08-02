@@ -1,7 +1,5 @@
 # Forkify Project
 
-# Forkify Project
-
 Recipe application with custom recipe uploads.
 
 ## Table of Contents
