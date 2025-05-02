@@ -1,6 +1,5 @@
 import { async } from 'regenerator-runtime/runtime';
 import { API_URL, RES_PER_PAGE, KEY } from './config';
-// import { AJAX, sendJSON } from './helper';
 import { AJAX } from './helper';
 
 export const state = {
@@ -79,7 +78,7 @@ export const getSearchResultsPage = function (page = state.search.page) {
 
 export const updateServings = function (newServings) {
   state.recipe.ingredients.forEach(ing => {
-    // newQt = oldQt * newServings / oldServings
+    
     ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
   });
 
@@ -117,8 +116,6 @@ init();
 const clearBookmarks = function () {
   localStorage.clear('bookmarks');
 };
-// For testing
-// clearBookmarks();
 
 export const uploadRecipe = async function (newRecipe) {
   try {
@@ -126,7 +123,6 @@ export const uploadRecipe = async function (newRecipe) {
       .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
       .map(ing => {
         const ingArr = ing[1].split(',').map(el => el.trim());
-        // const ingArr = ing[1].replaceAll(' ', '').split(',');
         if (ingArr.length !== 3)
           throw new Error(
             'Wrong ingredient format! Please use the correct format :)'
